@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Click_button.qml</file>
+        <file>Reset_button.qml</file>
+        <file>Target_name.qml</file>
+    </qresource>
+</RCC>
