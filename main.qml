@@ -1,11 +1,16 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.3
+import ClickCounter.BackEnd 1.0
 
 Window {
     width: maximumWidth
     height: maximumHeight
     visible: true
+
+    BackEnd {
+        id: backend
+    }
 
     ColumnLayout {
         anchors.fill: parent
@@ -20,8 +25,7 @@ Window {
 
         Text {
             id: counter
-            property int count: 0
-            text: count
+            text: backend.count
             horizontalAlignment: Text.AlignHCenter
             Layout.fillWidth: true
             height: 40
@@ -39,7 +43,7 @@ Window {
                 anchors.fill: parent
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: counter.count++
+                    onClicked: backend.count++
                 }
             }
         }
@@ -50,7 +54,7 @@ Window {
             Layout.minimumHeight: 40
             MouseArea {
                 anchors.fill: parent
-                onClicked: counter.count = 0
+                onClicked: backend.count = 0
             }
         }
     }
